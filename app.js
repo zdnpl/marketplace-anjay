@@ -6,41 +6,42 @@ let body = document.querySelector('body');
 let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
 
-openShopping.addEventListener('click', ()=>{
+openShopping.addEventListener('click', () => {
     body.classList.add('active');
-})
-closeShopping.addEventListener('click', ()=>{
+});
+
+closeShopping.addEventListener('click', () => {
     body.classList.remove('active');
-})
+});
 
 let products = [
     {
         id: 1,
-        name: 'soto balya',
+        name: 'Soto Hisham',
         image: '1.PNG',
         price: 120000
     },
     {
         id: 2,
-        name: 'mi ayam goreng',
+        name: 'Mie Ayam Goren Razan',
         image: '2.PNG',
         price: 120000
     },
     {
         id: 3,
-        name: 'sate sapi madura',
+        name: 'Sate Sapi Erlang',
         image: '3.PNG',
         price: 220000
     },
     {
         id: 4,
-        name: 'nasi goreng owi',
+        name: 'Nasi Goreng Owi',
         image: '4.PNG',
         price: 123000
     },
     {
         id: 5,
-        name: 'susu gula aren',
+        name: 'Susu Gula Aren Padlan',
         image: '5.PNG',
         price: 320000
     },
@@ -51,21 +52,24 @@ let products = [
         price: 120000
     }
 ];
-let listCards  = [];
-function initApp(){
-    products.forEach((value, key) =>{
+
+let listCards = [];
+function initApp() {
+    products.forEach((value, key) => {
         let newDiv = document.createElement('div');
         newDiv.classList.add('item');
         newDiv.innerHTML = `
             <img src="image/${value.image}">
             <div class="title">${value.name}</div>
             <div class="price">${value.price.toLocaleString()}</div>
-            <button onclick="addToCard(${key})">Add To Card</button>`;
+            <button onclick="addToCard(${key})">Add To Card</button>
+        `;
         list.appendChild(newDiv);
-    })
+    });
 }
 initApp();
-function addToCard(key){
+
+function addToCard(key) {
     if(listCards[key] == null){
         // copy product form list to list card
         listCards[key] = JSON.parse(JSON.stringify(products[key]));
@@ -73,14 +77,16 @@ function addToCard(key){
     }
     reloadCard();
 }
-function reloadCard(){
+
+function reloadCard() {
     listCard.innerHTML = '';
+    let arrayProductOrder = [];
     let count = 0;
     let totalPrice = 0;
-    listCards.forEach((value, key)=>{
+    listCards.forEach((value, key) => {
         totalPrice = totalPrice + value.price;
         count = count + value.quantity;
-        if(value != null){
+        if (value != null) {
             let newDiv = document.createElement('li');
             newDiv.innerHTML = `
                 <div><img src="image/${value.image}"/></div>
@@ -90,21 +96,27 @@ function reloadCard(){
                     <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
                     <div class="count">${value.quantity}</div>
                     <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                </div>`;
-                listCard.appendChild(newDiv);
+                </div>
+            `;
+            listCard.appendChild(newDiv);
+            arrayProductOrder.push(value.name + " (" + value.quantity + "x) ");
         }
-    })
-    
+    });
+
+    console.log(arrayProductOrder.join(', '));
+
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
 
-nominal = document.getElementById("nominal").value = totalPrice.toLocaleString();
-
+    let productlist, nominal;
+    productlist = document.getElementById("productlist").value = arrayProductOrder.join(', ');
+    nominal = document.getElementById("nominal").value = totalPrice.toLocaleString();
 }
+
 function changeQuantity(key, quantity){
-    if(quantity == 0){
+    if (quantity == 0) {
         delete listCards[key];
-    }else{
+    } else {
         listCards[key].quantity = quantity;
         listCards[key].price = quantity * products[key].price;
     }
