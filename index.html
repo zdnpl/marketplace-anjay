@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Marketplace Dejava</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body class="">
+<body>
     
     <div class="container">
         <header>
@@ -29,9 +29,8 @@
         <ul class="listCard">
         </ul>
         <form name="cart-data" action="">
-            <!-- invisible input -->
+            <input type="text" name="product" id="productlist" hidden>
             <input type="text" name="total" id="nominal" hidden>
-
             <div class="checkOut">
                 <div id="total" class="total">0</div>
                 <button type="submit" class="order">Order</button>
@@ -39,7 +38,7 @@
         </form>
     </div>
 
-    <script src="app.js"></script>
-    <script src="/JS/database.js"></script>
 </body>
+<script src="app.js"></script>
+<script src="JS/database.js"></script>
 </html>
