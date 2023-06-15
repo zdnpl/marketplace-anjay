@@ -16,37 +16,37 @@ closeShopping.addEventListener('click', ()=>{
 let products = [
     {
         id: 1,
-        name: 'PRODUCT NAME 1',
+        name: 'soto balya',
         image: '1.PNG',
         price: 120000
     },
     {
         id: 2,
-        name: 'PRODUCT NAME 2',
+        name: 'mi ayam goreng',
         image: '2.PNG',
         price: 120000
     },
     {
         id: 3,
-        name: 'PRODUCT NAME 3',
+        name: 'sate sapi madura',
         image: '3.PNG',
         price: 220000
     },
     {
         id: 4,
-        name: 'PRODUCT NAME 4',
+        name: 'nasi goreng owi',
         image: '4.PNG',
         price: 123000
     },
     {
         id: 5,
-        name: 'PRODUCT NAME 5',
+        name: 'susu gula aren',
         image: '5.PNG',
         price: 320000
     },
     {
         id: 6,
-        name: 'PRODUCT NAME 6',
+        name: 'terasi',
         image: '6.PNG',
         price: 120000
     }
