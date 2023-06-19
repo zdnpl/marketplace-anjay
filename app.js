@@ -22,43 +22,43 @@ let products = [
     {
         id: 1,
         name: 'Bakso Malang',
-        image: '1.PNG',
+        image: '1.png',
         price: 25000
     },
     {
         id: 2,
         name: 'Klepon',
-        image: '2.PNG',
+        image: '2.png',
         price: 12000
     },
     {
         id: 3,
         name: 'Tempe Mendoan (isi 2)',
-        image: '3.PNG',
+        image: '3.png',
         price: 12000
     },
     {
         id: 4,
         name: 'Tempe Mendoan (isi 3)',
-        image: '3.PNG',
+        image: '3.png',
         price: 15000
     },
     {
         id: 5,
         name: 'Es Kopi Gula Aren',
-        image: '4.PNG',
+        image: '4.png',
         price: 15000
     },
     {
         id: 6,
         name: 'Es Degan (gelas)',
-        image: '5.PNG',
+        image: '5.png',
         price: 8000
     },
     {
         id: 6,
         name: 'Es Degan (batok)',
-        image: '6.PNG',
+        image: '6.png',
         price: 17000
     }
 ];
